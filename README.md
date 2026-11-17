@@ -1,4 +1,25 @@
-# RocX Testnet Bot (LYID)
+# RocX Testnet Bot
+
+**Versi:** 1.0.0 · **Harga:** Rp 95.000 (~$6) · **Kontak pembelian:** [@rmndkyl](https://t.me/rmndkyl)
+
+Automation for the **RocX testnet** (Base Sepolia) — earns Active Energy (AE) by running the daily mission set through the official API. No browser, no wallet extension, no seed-phrase signing UI: the bot signs SIWE challenges and EIP-712 payloads locally with your own key.
+
+## Kebutuhan
+
+| Item | Detail |
+|---|---|
+| Runtime | Node.js 18+ |
+| Wallet | EVM / sesuai chain proyek (kamu sendiri) |
+| Proxy | tidak perlu |
+| Captcha | tidak perlu |
+| Akses | akun proyek yang kamu kelola sendiri |
+
+## Pembayaran
+
+E-Wallet: DANA / GoPay / ShopeePay · Bank: BCA / Seabank · Crypto: contact for wallet address.
+Pembeli menghubungi [@rmndkyl](https://t.me/rmndkyl), kirim bukti transfer, lalu terima license key.
+
+---
 
 Automation for the **RocX testnet** (Base Sepolia) — earns Active Energy (AE) by running the daily
 mission set through the official API. No browser, no wallet extension, no seed-phrase signing UI:
@@ -59,7 +80,6 @@ Edit `config.json`:
   "accounts": [
     {
       "label": "main",
-      "privateKey": "0x....",
       "xHandle": "yourhandle",
       "poaUrl": "",
       "weeklyPostId": ""
@@ -95,7 +115,6 @@ node index.js login --relogin               # force a fresh SIWE session
 Daily cron (WIB) — the project day resets at **07:00 WIB** (00:00 UTC):
 
 ```
-10 7 * * *  cd C:\Users\<you>\LYID-BOTS\rocx-bot && node index.js daily --deposit
 ```
 
 Every run writes `data/last-run.json` (machine) and `data/last-run.txt` (console lines) so you can
@@ -120,11 +139,6 @@ verify what actually happened, including tx hashes.
 | SBT campaign | `GET /api/v1/explore/top1000/me` |
 
 Contracts (Base Sepolia, chain id 84532):
-
-- Aave V3 pool: `0x8bab6d1b75f19e9ed9fce8b9bd338844ff79ae27`
-- Aave test USDC: `0xba50cd2a20f6da35d788639e581bca8d0b5d4d5f`
-- RocX PoA vault: `0x7537256b27ed74fe6166ca64cc33145eb82709d5`
-- PoA test USDC (has `claim()`): `0x0f9f05391818bffbe9bacdbfaed6c05928a41cbb`
 
 ---
 
